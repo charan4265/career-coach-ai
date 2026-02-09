@@ -8,25 +8,27 @@ API_KEY = st.secrets["GEMINI_API_KEY"]
 genai.configure(api_key=API_KEY)
 
 # 2. AI Analysis Function (This was missing in your error screenshot!)
+# --- REPLACE THIS ENTIRE SECTION ---
 def get_ai_analysis(resume_text, job_desc):
     try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        # We change '1.5-flash' to '2.5-flash' here
+        model = genai.GenerativeModel('gemini-2.5-flash')
         
         prompt = f"""
         Act as a Senior HR Manager. Analyze this Resume against the Job Description.
-        Provide the following in professional Markdown:
         1. **Match Score**: Give a score out of 100.
-        2. **Key Gaps**: Identify 3-5 missing keywords or skills.
-        3. **Cover Letter**: Write a professional 3-paragraph cover letter 
-           tailored for this specific job.
-        
+        2. **Key Gaps**: Identify missing keywords.
+        3. **Cover Letter**: Write a 3-paragraph professional letter.
+
         Resume: {resume_text}
         Job Description: {job_desc}
         """
         response = model.generate_content(prompt)
         return response.text
     except Exception as e:
+        # This will show you the exact error on the website if it fails
         return f"AI Error: {str(e)}"
+# ----------------------------------
 
 # 3. Main Application Logic
 def main():
