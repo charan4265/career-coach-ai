@@ -33,6 +33,7 @@ def get_ai_analysis(resume_text, job_desc):
         7. **Top 10 HR Q&A**: Provide the top 10 HR interview questions (like 'Strengths/Weaknesses', 'Why should we hire you?') specifically tailored for this candidate and role. For each question, provide a 'Best Answer' that uses the candidate's actual experience from their resume.
         8. **Skill Road Map**: Identify the top 3 most critical missing skills. For each skill, suggest a specific topic to study or a type of certification/course that would make the candidate a perfect fit.
         9. **Company Research**: Search Google for the latest news (last 6 months) about the company in this job description. Summarize 3 key recent achievements or news events to mention in an interview.
+        10.**Salary Negotiation Script**: Based on the role and candidate's level, provide a 4-sentence script they can use to negotiate their salary. Include a 'Reasoning' for why they deserve the higher end of the range.
 
         Resume: {resume_text}
         Job Description: {job_desc}
