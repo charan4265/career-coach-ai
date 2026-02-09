@@ -2,7 +2,15 @@ import streamlit as st
 import google.generativeai as genai
 from io import StringIO
 import PyPDF2
+import re # This allows the code to find patterns like numbers
 
+# This function finds the score number (e.g., 85) in the AI's text
+def extract_score(text):
+    # It looks for a number followed by '/100'
+    match = re.search(r"(\d+)/100", text)
+    if match:
+        return int(match.group(1))
+    return 0
 # 1. API Security (Make sure "GEMINI_API_KEY" is in your Streamlit Secrets)
 API_KEY = st.secrets["GEMINI_API_KEY"]
 genai.configure(api_key=API_KEY)
@@ -92,9 +100,37 @@ def main():
             st.error("Please provide both your resume and the job description!")
 
     # Display results and download button
+    # This part shows the results when they are ready
     if st.session_state.analysis_report:
         st.divider()
+        
+        # 1. Get the numerical score from the AI report
+        score = extract_score(st.session_state.analysis_report)
+        
+        # 2. Show the Score Metric and Progress Bar in columns
+        col_metric, col_progress = st.columns([1, 2])
+        
+        with col_metric:
+            st.metric(label="Resume Match Score", value=f"{score}%")
+            
+        with col_progress:
+            st.write("### Analysis Progress")
+            st.progress(score / 100)
+        
+        # 3. Show a colorful status message based on the score
+        if score < 50:
+            st.error("📉 Low Match: Your resume needs more keywords from the job description.")
+        elif score < 80:
+            st.warning("📈 Good Match: You are very close! Add a few more specific skills.")
+        else:
+            st.success("🎯 Perfect Match: Your resume is highly optimized for this role!")
+
+        st.divider()
+
+        # 4. Display the full text report (Missing Keywords, Cover Letter, etc.)
         st.markdown(st.session_state.analysis_report)
+        
+        # 5. Your download button stays here
         st.download_button(
             label="📥 Download Full Report",
             data=st.session_state.analysis_report,
