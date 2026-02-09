@@ -29,8 +29,9 @@ def get_ai_analysis(resume_text, job_desc):
         3. **Cover Letter**: Write a 3-paragraph professional letter.
         4. **Interview Tip**: Provide one specific bonus piece of advice on how to 
            talk about their background during the actual interview for this role.
-        5. **Interview Questions**: List exactly 10 common interview questions tailored to this job and the candidate's profile.
+        5. **Top 10 Technical Q&A**: Provide exactly 10 high-level technical interview questions specifically for this role. For each question, provide a detailed 'Correct Answer' and explain the 'Key Concept' the interviewer is testing.
         6. **Top 10 HR Q&A**: Provide the top 10 HR interview questions (like 'Strengths/Weaknesses', 'Why should we hire you?') specifically tailored for this candidate and role. For each question, provide a 'Best Answer' that uses the candidate's actual experience from their resume.
+        6. **Company Research**: Search Google for the latest news (last 6 months) about the company in this job description. Summarize 3 key recent achievements or news events to mention in an interview.
 
         Resume: {resume_text}
         Job Description: {job_desc}
