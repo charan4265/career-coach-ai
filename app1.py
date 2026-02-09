@@ -34,6 +34,25 @@ def get_ai_analysis(resume_text, job_desc):
 def main():
     st.set_page_config(page_title="AI Career Pro", layout="wide")
     st.title("🚀 AI Career Coach: Score & Cover Letter")
+    def main():
+    st.set_page_config(page_title="AI Career Pro", layout="wide")
+    st.title("🚀 AI Career Coach: Score & Cover Letter")
+
+    # --- ADD THIS SIDEBAR SECTION HERE ---
+    with st.sidebar:
+        st.header("💡 Quick Resume Tips")
+        st.info("""
+        - **Use Action Verbs**: Start bullets with 'Managed', 'Developed', or 'Solved'.
+        - **Quantify Results**: Use numbers (e.g., 'Increased efficiency by 20%').
+        - **Keywords**: Ensure your resume contains words found in the Job Description.
+        """)
+        # You can even add a helpful video link for users
+        st.markdown("---")
+        st.markdown("### 🎥 Watch: How to beat ATS")
+        st.video("https://www.youtube.com/watch?v=Tt08KmFfIYQ")
+    # -------------------------------------
+
+    # ... keep the rest of your code (Session State, Columns, etc.) exactly the same ...
 
     # Keep the report in memory so it doesn't disappear
     if "analysis_report" not in st.session_state:
