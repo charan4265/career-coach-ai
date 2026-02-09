@@ -30,6 +30,7 @@ def get_ai_analysis(resume_text, job_desc):
         4. **Interview Tip**: Provide one specific bonus piece of advice on how to 
            talk about their background during the actual interview for this role.
         5. **Interview Questions**: List exactly 10 common interview questions tailored to this job and the candidate's profile.
+        6. **Top 10 HR Q&A**: Provide the top 10 HR interview questions (like 'Strengths/Weaknesses', 'Why should we hire you?') specifically tailored for this candidate and role. For each question, provide a 'Best Answer' that uses the candidate's actual experience from their resume.
 
         Resume: {resume_text}
         Job Description: {job_desc}
@@ -132,6 +133,18 @@ def main():
 
         # 4. Display the full text report (Missing Keywords, Cover Letter, etc.)
         st.markdown(st.session_state.analysis_report)
+        # --- NEW TOP 10 HR Q&A FEATURE ---
+        if "Top 10 HR Q&A" in st.session_state.analysis_report:
+            st.divider()
+            with st.expander("🎓 Top 10 HR Interview Questions & Expert Answers"):
+                st.write("Practicing these answers will help you sound confident and professional:")
+                
+                # Extract the Q&A part from the AI response
+                qa_content = st.session_state.analysis_report.split("Top 10 HR Q&A:")[-1]
+                
+                # We use a code block or text area to make it easy to read
+                st.info(qa_content.strip())
+        # ---------------------------------
         
         # 5. Your download button stays here
         st.download_button(
