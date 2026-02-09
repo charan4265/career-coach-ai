@@ -27,6 +27,8 @@ def get_ai_analysis(resume_text, job_desc):
         1. **Match Score**: Give a score out of 100.
         2. **Key Gaps**: Identify missing keywords.
         3. **Cover Letter**: Write a 3-paragraph professional letter.
+        4. **Interview Tip**: Provide one specific bonus piece of advice on how to 
+           talk about their background during the actual interview for this role.
 
         Resume: {resume_text}
         Job Description: {job_desc}
