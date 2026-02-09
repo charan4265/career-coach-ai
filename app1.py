@@ -25,13 +25,14 @@ def get_ai_analysis(resume_text, job_desc):
         prompt = f"""
         Act as a Senior HR Manager. Analyze this Resume against the Job Description.
         1. **Match Score**: Give a score out of 100.
-        2. **Key Gaps**: Identify missing keywords.
-        3. **Cover Letter**: Write a 3-paragraph professional letter.
-        4. **Interview Tip**: Provide one specific bonus piece of advice on how to talk about their background during the actual interview for this role.
-        5. **Top 10 Technical Q&A**: Provide exactly 10 high-level technical interview questions specifically for this role. For each question, provide a detailed 'Correct Answer' and explain the 'Key Concept' the interviewer is testing.
-        6. **Top 10 HR Q&A**: Provide the top 10 HR interview questions (like 'Strengths/Weaknesses', 'Why should we hire you?') specifically tailored for this candidate and role. For each question, provide a 'Best Answer' that uses the candidate's actual experience from their resume.
-        7. **Skill Road Map**: Identify the top 3 most critical missing skills. For each skill, suggest a specific topic to study or a type of certification/course that would make the candidate a perfect fit.
-        8. **Company Research**: Search Google for the latest news (last 6 months) about the company in this job description. Summarize 3 key recent achievements or news events to mention in an interview.
+        2. **ATS Score**: Give a score out of 100 based on keyword density and formatting.
+        3. **Key Gaps**: Identify missing keywords.
+        4. **Cover Letter**: Write a 3-paragraph professional letter.
+        5. **Interview Tip**: Provide one specific bonus piece of advice on how to talk about their background during the actual interview for this role.
+        6. **Top 10 Technical Q&A**: Provide exactly 10 high-level technical interview questions specifically for this role. For each question, provide a detailed 'Correct Answer' and explain the 'Key Concept' the interviewer is testing.
+        7. **Top 10 HR Q&A**: Provide the top 10 HR interview questions (like 'Strengths/Weaknesses', 'Why should we hire you?') specifically tailored for this candidate and role. For each question, provide a 'Best Answer' that uses the candidate's actual experience from their resume.
+        8. **Skill Road Map**: Identify the top 3 most critical missing skills. For each skill, suggest a specific topic to study or a type of certification/course that would make the candidate a perfect fit.
+        9. **Company Research**: Search Google for the latest news (last 6 months) about the company in this job description. Summarize 3 key recent achievements or news events to mention in an interview.
 
         Resume: {resume_text}
         Job Description: {job_desc}
