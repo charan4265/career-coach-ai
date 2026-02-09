@@ -31,10 +31,9 @@ def get_ai_analysis(resume_text, job_desc):
 # ----------------------------------
 
 # 3. Main Application Logic
+# 3. Main Application Logic
 def main():
-    st.set_page_config(page_title="AI Career Pro", layout="wide")
-    st.title("🚀 AI Career Coach: Score & Cover Letter")
-    def main():
+    # Make sure this is indented with 4 spaces
     st.set_page_config(page_title="AI Career Pro", layout="wide")
     st.title("🚀 AI Career Coach: Score & Cover Letter")
 
@@ -46,7 +45,6 @@ def main():
         - **Quantify Results**: Use numbers (e.g., 'Increased efficiency by 20%').
         - **Keywords**: Ensure your resume contains words found in the Job Description.
         """)
-        # You can even add a helpful video link for users
         st.markdown("---")
         st.markdown("### 🎥 Watch: How to beat ATS")
         st.video("https://www.youtube.com/watch?v=Tt08KmFfIYQ")
