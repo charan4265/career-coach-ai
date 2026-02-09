@@ -29,6 +29,7 @@ def get_ai_analysis(resume_text, job_desc):
         3. **Cover Letter**: Write a 3-paragraph professional letter.
         4. **Interview Tip**: Provide one specific bonus piece of advice on how to 
            talk about their background during the actual interview for this role.
+        5. **Interview Questions**: List exactly 10 common interview questions tailored to this job and the candidate's profile.
 
         Resume: {resume_text}
         Job Description: {job_desc}
